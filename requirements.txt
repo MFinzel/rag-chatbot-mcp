@@ -1,0 +1,10 @@
+langchain-openai==1.1.10
+langchain-chroma==1.1.0
+langchain-community==0.4.1
+langchain-text-splitters==1.1.1
+gradio==6.8.0
+python-dotenv==1.2.2
+fastmcp==3.1.0
+mcp==1.26.0
+pypdf==6.7.5
+PyMuPDF==1.24.14 
