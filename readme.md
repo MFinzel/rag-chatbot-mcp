@@ -19,6 +19,15 @@ Zusätzlich kann er Zusammenfassungen erstellen und diese über ein **MCP Mail T
 - Containerisierung der Services für Microservices Architektur
 - IaC Komponenten für Cluster-Betrieb
 
+## Verwendung
+
+- PDF in data speichern
+- ingest_database.py einmalig ausführen mit **python .\ingest_database.py** 
+- mcp_server start mit **fastmcp run mcp_server.py:mcp --transport http --port 8000**
+- chatbot starten mit **python .\chatbot.py** und über local host aufrubar 
+- z.B Dokument zusammenfassen lassen
+- mit /mail Empfängermail | Betreff | Text  MCP Tool aufrufen und Zusammenfassung versenden 
+
 ## Architektur
 
 ```mermaid

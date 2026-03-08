@@ -1,3 +1,10 @@
+"""
+Ingestion Script für den RAG Chatbot.
+
+Lädt PDF Dokumente aus dem data Ordner,
+zerlegt sie in Chunks und erstellt daraus Vektor-Embeddings, die in der ChromaDB gespeichert werden.    
+"""
+
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai.embeddings import OpenAIEmbeddings

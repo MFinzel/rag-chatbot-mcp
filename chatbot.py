@@ -12,7 +12,7 @@ from fastmcp import Client
 # configuration
 DATA_PATH = r"data"
 CHROMA_PATH = r"chroma_db"
-MCP_MAIL_URL = "http://127.0.0.1:8000/mcp"   # <- dein separater MCP Mail Service
+MCP_MAIL_URL = "http://127.0.0.1:8000/mcp" 
 
 embeddings_model = OpenAIEmbeddings(model="text-embedding-3-large")
 llm = ChatOpenAI(temperature=0.5, model='gpt-4o-mini')
@@ -50,15 +50,15 @@ def stream_response(message, history):
     cmd = parse_mail_command(message or "")
     if cmd:
         if "error" in cmd:
-            yield f"❌ {cmd['error']}"
+            yield f" {cmd['error']}"
             return
 
-        yield "📨 Sende E-Mail über MCP… (ggf. im MCP-Server-Terminal Device-Code Login bestätigen)"
+        yield " Sende E-Mail über MCP… (ggf. im MCP-Server-Terminal Device-Code Login bestätigen)"
         try:
             res = asyncio.run(mcp_send_email(cmd["recipient"], cmd["subject"], cmd["body"]))
-            yield f"✅ MCP Ergebnis: {res}"
+            yield f" MCP Ergebnis: {res}"
         except Exception as e:
-            yield f"❌ Fehler beim Mailversand: {e}"
+            yield f" Fehler beim Mailversand: {e}"
         return
 
     # 1) normaler RAG-Chat
